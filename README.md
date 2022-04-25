@@ -1,12 +1,12 @@
 # Hey! 🧐
 
-# Versions
+## Versions 🚀
 
 ```
 node version # 17.3.0
 ```
 
-# How to run 🏃
+## How to run 🏃
 clone project then yarn run
 ```
 git clone git@github.com:Loafwad/vg-interview-test.git
