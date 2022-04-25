@@ -1,0 +1,73 @@
+$bg:hsl(0, 0%, 20%);
+$text:hsl(25, 0%, 90%);
+
+html, body {
+    height: 100vh;
+    background-color: $bg;
+    color: $text;
+}
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    >*{
+        width: fit-content;
+    }
+}
+.box-filter {
+    height: 100%;
+    display: flex;
+    margin: auto;
+    width: 60%;
+}
+
+
+.container {
+    height: clamp(200px, 80%, 100%);
+    width: clamp(40px, 100%, 900px);
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    > * {
+        margin: 1rem;
+    }
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.02);
+    transition: transform 0.2s;
+    }
+}
+.card:active {
+    transform: scale(0.98);
+    transition: transform 0.05s ease-in-out;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 2px;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
